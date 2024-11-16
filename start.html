@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, height=device-height">
+    <title>mObywatel</title>
+    <script src="https://kit.fontawesome.com/b9a95bbb3e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="top">
+        <div id="topbar"></div>
+        <header>
+            <div></div>
+            <div id="logo">
+                <h6 style="color: rgb(206, 0, 0);">m</h6>
+                <h6 style="color: rgb(0, 23, 47);">Obywatel</h6>
+            </div>
+            <div id="icns">
+                <i class="fa-solid fa-inbox"></i>
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </header>
+    </div>
+
+    <section style="margin-top: 80px;">
+        <div class="mark">
+            <p>Dokumenty</p>
+            <div style="display: flex;">
+                <p style="font-size: larger; margin-top: 13px;">+</p>
+                <p>Wszystkie</p>
+            </div>
+        </div>
+    
+        <div class="zakladki">
+            <a href='index.html'><img src="zak.png" alt=""></a>
+        </div>
+    
+        <div style="margin-top: 20px;" class="mark">
+            <p>Usługi</p>
+            <div style="display: flex;">
+                <p>Wszystkie</p>
+            </div>
+        </div>
+
+        <div class="uslugi">
+            <img src="uslugi.png" alt="">
+        </div>
+    </section>
+
+    <div class="bottom">
+        <div id="navbar"></div>
+        <footer>
+            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-user"></i>
+            <i class="fa-solid fa-qrcode"></i>
+            <i class="fa-solid fa-folder"></i>
+            <i class="fa-solid fa-circle-info"></i>
+        </footer>
+    </div>
+
+    <style>
+        body{
+            margin: 0;
+            font-family: sans-serif;
+            background-color: rgb(236, 236, 236);
+        }
+        header{
+            z-index: 5;
+            display: flex;
+            position: absolute;
+            justify-content: space-evenly;
+            width: 100vw;
+            padding-left: 50px;
+            padding-top: 10px;
+            margin-top: -60px;
+        }
+        header div{
+            display: flex;
+        }
+        #logo{
+            font-size: 30px;
+            margin-left: -30px;
+            margin-top: -40px;
+        }
+        #icns i{
+            margin: 5px;
+            margin-top: 10px;
+            font-size: 20px;
+        }
+
+        .mark{
+            margin-top: -25px;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-between;
+            width: 90vw;
+            margin-left: 5vw;
+            font-size: 18px;
+        }
+        .mark div p{
+            margin-left: 10px;
+            color: rgb(0, 115, 255);
+        }
+        .zakladki{
+            margin-left: 5vw;
+        }
+        .zakladki img{
+            width: 85vw;
+            border-radius: 20px;
+        }
+        .uslugi img{
+            width: 100vw;
+        }
+        #topbar{
+            position: absolute;
+            z-index: 1;
+            background-color: white;
+            width: 100vw;
+            height: 50px;
+            top: 0;
+        }
+        footer{
+            display: flex;
+            position: absolute;
+            justify-content: space-between;
+            width: 80vw;
+            margin-left: 10vw;
+            font-size: 20px;
+            margin-top: 15px;
+        }
+        #navbar{
+            position: absolute;
+            width: 100vw;
+            height: 50px;
+            background-color: white;
+        }
+        .bottom{
+            position: absolute;
+            bottom: 50px;
+        }
+    </style>
+</body>
+</html>

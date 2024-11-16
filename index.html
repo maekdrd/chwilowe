@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mDowód</title>
+	<script src="https://kit.fontawesome.com/b9a95bbb3e.js" crossorigin="anonymous"></script>
+	<script>
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/chwilowe/sw.js')
+    .then(function(registration) {
+      console.log('Service Worker registered with scope:', registration.scope);
+    })
+    .catch(function(error) {
+      console.log('Service Worker registration failed:', error);
+    });
+}
+
+	</script>
+	  
+	<style>
+        body{
+            margin: 0;
+            font-family: sans-serif;
+			background-color: #f5f6fb;
+        }
+        header{
+            padding-top: 10px;
+            display: flex;
+            justify-content: center; /* Wyśrodkowanie napisu "M" */
+            align-items: center;
+            font-weight: 600;
+            margin-bottom: 20px;
+            height: 40px;
+        }
+        header .arrow {
+            position: absolute; /* Pozycjonowanie strzałki */
+            left: 20px; /* Strzałka w lewym górnym rogu */
+            top: 10px;
+        }
+        p{
+            font-size: 2.2vh;
+            margin: 0;
+        }
+        #datetime{
+            text-align: center;
+            font-family: sans-serif;
+            font-size: 15px;
+            margin-top: 10px; /* Odstęp między "M" a czasem */
+            color: black; /* Kolor tekstu */
+        }
+        .container {
+            position: relative;
+            width: 90vw;
+            margin: 0 auto;
+        }
+        .background-image {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: none;
+        }
+        .animated-gif {
+            position: absolute;
+            left: 2%; /* Pozycjonowanie w lewo */
+            top: 49%;  /* Pozycjonowanie na środek */
+            transform: translateY(-50%); /* Wyrównanie GIF-a do środka */
+            width: 25vw; /* Stała szerokość GIF-a 10% szerokości ekranu */
+            height: auto; /* Zachowanie proporcji */
+            border: none; /* Usunięcie obramówki wokół GIF-a */
+            outline: none; /* Usunięcie konturu wokół GIF-a */
+            background: transparent; /* Przezroczyste tło */
+            box-shadow: none; /* Usunięcie cienia wokół GIF-a */
+        }
+
+        img {
+            width: 90vw; /* Zwiększenie obrazów na 90% szerokości */
+            margin: 10px auto; /* Wyśrodkowanie obrazów */
+            display: block;
+            border-radius: 10px;
+            box-shadow: none;
+        }
+
+        /* Media query dla urządzeń mobilnych */
+        @media (max-width: 768px) {
+            .animated-gif {
+                width: 25vw; /* GIF zachowa tę samą szerokość na telefonach */
+            }
+        }
+
+    </style>
+<link rel="manifest" href="/chwilowe/manifest.json">
+</head>
+
+
+<body>
+
+    <header>
+        <a href='/chwilowe/start.html'><i class="fa-solid fa-arrow-left arrow"></i></a>
+        <p>mDowód</p>
+    </header>
+
+    <div>
+        <!-- Wyświetlanie daty i czasu -->
+        <p id="datetime"></p>
+
+        <!-- Kontener z obrazem i GIF-em -->
+        <div class="container">
+            <img src="dow.png" alt="Tło" class="background-image">
+            <img src="flaga.gif" alt="Animowany GIF" style="filter: saturate(190%) contrast(140%) brightness(95%);" class="animated-gif">
+
+        </div>
+
+        <!-- Obrazy things -->
+        <img src="thing1.png" alt="Obraz 1">
+        <img src="thing2.png" alt="Obraz 2">
+		<img src="thing3.png" alt="Obraz 3">
+
+        <script>
+            // JavaScript code to display date and time
+            function displayDateTime() {
+                var now = new Date();
+                var datetimeElement = document.getElementById("datetime");
+
+                var day = String(now.getDate()).padStart(2, '0'); // Ensure two digits for day
+                var month = String(now.getMonth() + 1).padStart(2, '0'); // Ensure two digits for month
+                var year = now.getFullYear();
+
+                var date = day + '.' + month + '.' + year;
+                var time = now.toLocaleTimeString();
+
+                datetimeElement.textContent = "Czas: " + time + "  " + date;
+            }
+
+            // Call the function initially
+            displayDateTime();
+
+            // Update the date and time every second
+            setInterval(displayDateTime, 1000); 
+        </script>
+    </div>
+</body>
+</html>

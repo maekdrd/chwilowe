@@ -1,0 +1,22 @@
+{
+  "short_name": "m0bywatel",
+  "name": "m0bywatel",
+  "description": "hahahahh", 
+  "icons": [
+    {
+      "src": "ikona192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "ikona512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/chwilowe/start.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#000000"
+}
+
